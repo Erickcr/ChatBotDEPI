@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31313.79
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DEPIBot", "DEPIBot\DEPIBot.csproj", "{03A681AD-98F3-49EA-8309-A3042DC1DC18}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{03A681AD-98F3-49EA-8309-A3042DC1DC18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03A681AD-98F3-49EA-8309-A3042DC1DC18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03A681AD-98F3-49EA-8309-A3042DC1DC18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03A681AD-98F3-49EA-8309-A3042DC1DC18}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {29FD1BBC-6A93-4E1E-8859-FCA2C73CAE68}
+	EndGlobalSection
+EndGlobal
