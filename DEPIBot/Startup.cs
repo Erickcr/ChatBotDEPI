@@ -30,6 +30,7 @@ namespace DEPIBot
         public void ConfigureServices(IServiceCollection services)
         {
 
+
             var storage = new BlobsStorage(
                 Configuration.GetSection("StorageConnectionString").Value,
                 Configuration.GetSection("StorageContainer").Value

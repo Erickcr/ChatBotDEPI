@@ -15,7 +15,7 @@ namespace DEPIBot
         private readonly BotState _userState;
         private readonly BotState _conversationState;
         private readonly Dialog _dialog;
-
+        
         public DEPIBot(UserState userState, ConversationState conversationState, T dialog)
         {
             _userState = userState;
@@ -29,7 +29,7 @@ namespace DEPIBot
             {
                 if (member.Id != turnContext.Activity.Recipient.Id)
                 {
-                    await turnContext.SendActivityAsync(MessageFactory.Text($"Hola, Bienvenido!"), cancellationToken);
+                    await turnContext.SendActivityAsync(MessageFactory.Text($"Hola, Bienvenido a la DEPI,División de Estudios de Posgrado e Investigación"), cancellationToken);
                 }
             }
         }
@@ -43,6 +43,9 @@ namespace DEPIBot
 
         protected override async Task OnMessageActivityAsync(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
         {
+            //var userMessage = turnContext.Activity.Text;
+            //await turnContext.SendActivityAsync($"User:{userMessage}", cancellationToken: cancellationToken );
+
             await _dialog.RunAsync(
                 turnContext,
                 _conversationState.CreateProperty<DialogState>(nameof(DialogState)),

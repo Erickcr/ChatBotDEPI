@@ -1,4 +1,5 @@
-﻿using EchoBot.Infrastructure;
+﻿using DEPIBot.Common.Cards;
+using EchoBot.Infrastructure;
 using EchoBot.Infrastructure.QnAMakerAI;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Dialogs;
@@ -52,6 +53,18 @@ namespace DEPIBot.Dialogs
                 case "DatosInscripcion":
                     await IntentDatosInscripcion(stepContext, luisResult, cancellationToken);
                     break;
+                    case "ofertaAcademica":
+                    await IntentofertaAcademica(stepContext, luisResult, cancellationToken);
+                    break;
+                case "Maestrias":
+                    await IntentMaestrias(stepContext, luisResult, cancellationToken);
+                    break;
+                case "Doctorados":
+                    await IntentDoctorados(stepContext, luisResult, cancellationToken);
+                    break;
+                case "Contacto":
+                    await IntentContacto(stepContext, luisResult, cancellationToken);
+                    break;
                 case "None":
                     await IntentNone(stepContext, luisResult, cancellationToken);
                     break;
@@ -60,6 +73,29 @@ namespace DEPIBot.Dialogs
             }
 
             return await stepContext.NextAsync(cancellationToken : cancellationToken);
+        }
+
+        private async Task IntentContacto(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await stepContext.Context.SendActivityAsync("Aquí te muestro la información de contacto de los coordinadores:", cancellationToken: cancellationToken);
+            await contacto.ToShow(stepContext, cancellationToken);
+        }
+        private async Task IntentDoctorados(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await stepContext.Context.SendActivityAsync("Te ofrecemos los siguientes doctorados:", cancellationToken: cancellationToken);
+            await doctorados.ToShow(stepContext, cancellationToken);
+        }
+
+        private async Task IntentMaestrias(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await stepContext.Context.SendActivityAsync("Te ofrecemos las siguientes maestrías", cancellationToken: cancellationToken);
+            await maestrias.ToShow(stepContext, cancellationToken);
+        }
+
+        private async Task IntentofertaAcademica(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await stepContext.Context.SendActivityAsync("Nuestra oferta academica es:", cancellationToken: cancellationToken);
+            await ofertaacademica.ToShow(stepContext, cancellationToken);
         }
 
         #region IntentLuis
@@ -112,7 +148,24 @@ namespace DEPIBot.Dialogs
         }
 
         #endregion
+        
+        // metodo del IntentNone 
+        private async Task IntentNon(WaterfallStepContext stepContext, CancellationToken cancellationToken)
+        {
+            var resultQna = await _qnaMakerAIService._qnaMakerResult.GetAnswersAsync(stepContext.Context);
 
+            var score = resultQna.FirstOrDefault()?.Score;
+            string response = resultQna.FirstOrDefault()?.Answer;
+
+            if(score >= 0.5)
+            {
+                await stepContext.Context.SendActivityAsync(response, cancellationToken: cancellationToken);
+            }
+            else
+            {
+                await stepContext.Context.SendActivityAsync("No comprendo, lo que que quieres decir", cancellationToken: cancellationToken);
+            }
+        }
         private async Task<DialogTurnResult> FinalProcess(WaterfallStepContext stepContext, CancellationToken cancellationToken)
         {
             return await stepContext.EndDialogAsync(cancellationToken: cancellationToken);

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Documentos\\Semestre 9\\Pruebas y validación de software\\DEPI\\DEPI\\DEPIBot\\DEPIBot.csproj": {}
+    "C:\\Users\\Lupita Carranza Diaz\\source\\repos\\ChatBotDEPI\\DEPIBot\\DEPIBot.csproj": {}
   },
   "projects": {
-    "D:\\Documentos\\Semestre 9\\Pruebas y validación de software\\DEPI\\DEPI\\DEPIBot\\DEPIBot.csproj": {
+    "C:\\Users\\Lupita Carranza Diaz\\source\\repos\\ChatBotDEPI\\DEPIBot\\DEPIBot.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Documentos\\Semestre 9\\Pruebas y validación de software\\DEPI\\DEPI\\DEPIBot\\DEPIBot.csproj",
+        "projectUniqueName": "C:\\Users\\Lupita Carranza Diaz\\source\\repos\\ChatBotDEPI\\DEPIBot\\DEPIBot.csproj",
         "projectName": "DEPIBot",
-        "projectPath": "D:\\Documentos\\Semestre 9\\Pruebas y validación de software\\DEPI\\DEPI\\DEPIBot\\DEPIBot.csproj",
-        "packagesPath": "C:\\Users\\erick\\.nuget\\packages\\",
-        "outputPath": "D:\\Documentos\\Semestre 9\\Pruebas y validación de software\\DEPI\\DEPI\\DEPIBot\\obj\\",
+        "projectPath": "C:\\Users\\Lupita Carranza Diaz\\source\\repos\\ChatBotDEPI\\DEPIBot\\DEPIBot.csproj",
+        "packagesPath": "C:\\Users\\Lupita Carranza Diaz\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Lupita Carranza Diaz\\source\\repos\\ChatBotDEPI\\DEPIBot\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\erick\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Lupita Carranza Diaz\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
