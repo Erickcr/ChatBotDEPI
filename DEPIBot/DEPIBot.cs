@@ -29,7 +29,7 @@ namespace DEPIBot
             {
                 if (member.Id != turnContext.Activity.Recipient.Id)
                 {
-                    await turnContext.SendActivityAsync(MessageFactory.Text($"Hola, Bienvenido a la DEPI,División de Estudios de Posgrado e Investigación"), cancellationToken);
+                    await turnContext.SendActivityAsync(MessageFactory.Text($"Hola, Bienvenido a la DEPI,Division de Estudios de Posgrado e Investigacion"), cancellationToken);
                 }
             }
         }

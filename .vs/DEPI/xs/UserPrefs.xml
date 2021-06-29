@@ -1,0 +1,33 @@
+﻿<Properties StartupConfiguration="{03A681AD-98F3-49EA-8309-A3042DC1DC18}|$safeprojectname$">
+  <MonoDevelop.Ide.Workbench ActiveDocument="DEPIBot/Dialogs/RootDialog.cs">
+    <Files>
+      <File FileName="DEPIBot/Startup.cs" Line="16" Column="36" />
+      <File FileName="DEPIBot/Program.cs" />
+      <File FileName="DEPIBot/appsettings.json" />
+      <File FileName="DEPIBot/DEPIBot.cs" />
+      <File FileName="DEPIBot/Infrastructure/Luis/ILuisService.cs" />
+      <File FileName="DEPIBot/Infrastructure/Luis/LuisService.cs" />
+      <File FileName="DEPIBot/Dialogs/RootDialog.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="DEPI" expanded="True">
+            <Node name="DEPIBot" expanded="True">
+              <Node name="Dialogs" expanded="True">
+                <Node name="RootDialog.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.DEPIBot PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
