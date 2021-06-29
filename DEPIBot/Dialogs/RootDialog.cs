@@ -14,10 +14,10 @@ namespace DEPIBot.Dialogs
 {
     public class RootDialog: ComponentDialog
     {
-        private readonly ILuisService _luisService;
         private readonly IQnAMakerAIService _qnaMakerAIService;
+        private readonly ILuisService _luisService;
 
-        public RootDialog(ILuisService luisService, IQnAMakerAIService qnaMakerAIService)
+        public RootDialog(IQnAMakerAIService qnaMakerAIService, ILuisService luisService)
         {
             _qnaMakerAIService = qnaMakerAIService;
             _luisService = luisService;
@@ -29,6 +29,32 @@ namespace DEPIBot.Dialogs
 
             AddDialog(new WaterfallDialog(nameof(WaterfallDialog), waterfallSteps));
             InitialDialogId = nameof(WaterfallDialog);
+        }
+
+        private async Task IntentNone(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            var resultQnA = await _qnaMakerAIService._qnaMakerResult.GetAnswersAsync(stepContext.Context);
+
+            var score = resultQnA.FirstOrDefault()?.Score;
+            string response = resultQnA.FirstOrDefault()?.Answer;
+
+            if (score >= 0.5)
+            {
+                await stepContext.Context.SendActivityAsync(response, cancellationToken: cancellationToken);
+            }
+            else
+            {
+                await stepContext.Context.SendActivityAsync("No entiendo, se más claro.", cancellationToken: cancellationToken);
+
+            }
+
+
+        }
+
+
+        private async Task<DialogTurnResult> FinalProcess(WaterfallStepContext stepContext, CancellationToken cancellationToken)
+        {
+            return await stepContext.EndDialogAsync(cancellationToken: cancellationToken);
         }
 
         private async Task<DialogTurnResult> InitialProcess(WaterfallStepContext stepContext, CancellationToken cancellationToken)
@@ -69,6 +95,12 @@ namespace DEPIBot.Dialogs
                 case "informacion":
                         await Intentinformacion(stepContext, luisResult, cancellationToken);
                     break;
+                case "Convenios":
+                    await IntentConvenios(stepContext, luisResult, cancellationToken);
+                break;
+                case "DEPI":
+                    await IntentDEPI(stepContext, luisResult, cancellationToken);
+                    break;
                 case "None":
                     await IntentNone(stepContext, luisResult, cancellationToken);
                     break;
@@ -78,7 +110,7 @@ namespace DEPIBot.Dialogs
 
             return await stepContext.NextAsync(cancellationToken : cancellationToken);
         }
-
+        #region IntentLuis
         private async Task Intentinformacion(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
         {
             await stepContext.Context.SendActivityAsync("¿Que tipo de información requieres saber? \n\n Te dejo algunas opciones o me puedes escribir tu pregunta, estoy para atenderte bebe", cancellationToken: cancellationToken);
@@ -108,11 +140,21 @@ namespace DEPIBot.Dialogs
             await ofertaacademica.ToShow(stepContext, cancellationToken);
         }
 
-        #region IntentLuis
+        
 
         private async Task IntentSaludar(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
         {
             await stepContext.Context.SendActivityAsync("¿Como te puedo ayudar?", cancellationToken: cancellationToken);
+        }
+        private async Task IntentConvenios(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await stepContext.Context.SendActivityAsync("Los convenios que se estamos manejando son con el Consejo Nacional de Ciencia y Tecnología (CONACYT), Comisión Federal de Electricidad (CFE) y etc.", cancellationToken: cancellationToken);
+        }
+
+        private async Task IntentDEPI(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await stepContext.Context.SendActivityAsync("Es la División de Estudios de Posgrado e Investigación, " +
+                "nuestro objetivo es planear, coordinar, controlar y evaluar los estudios de posgrado que se imparten en el Instituto Tecnológico de Morelia etc.", cancellationToken: cancellationToken);
         }
 
         private async Task IntentAgradecer(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
@@ -136,29 +178,8 @@ namespace DEPIBot.Dialogs
                 $"Dos fotografías tamaño infantil de frente." + "\r\n" +
                 $"Dos cartas de recomendación académica.", cancellationToken: cancellationToken);
         }
-
-        private async Task IntentNone(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
-        {
-            var resultQnA = await _qnaMakerAIService._qnaMakerResult.GetAnswersAsync(stepContext.Context);
-
-            var score = resultQnA.FirstOrDefault()?.Score;
-            string response = resultQnA.FirstOrDefault()?.Answer;
-
-            if(score >= 0.5)
-            {
-                await stepContext.Context.SendActivityAsync(response, cancellationToken: cancellationToken);
-            }
-            else
-            {
-                await stepContext.Context.SendActivityAsync("No entiendo, se más claro.", cancellationToken: cancellationToken);
-
-            }
-
-          
-        }
-
         #endregion
-        
+
         // metodo del IntentNone 
         private async Task IntentNon(WaterfallStepContext stepContext, CancellationToken cancellationToken)
         {
@@ -167,7 +188,7 @@ namespace DEPIBot.Dialogs
             var score = resultQna.FirstOrDefault()?.Score;
             string response = resultQna.FirstOrDefault()?.Answer;
 
-            if(score >= 0.5)
+            if (score >= 0.5)
             {
                 await stepContext.Context.SendActivityAsync(response, cancellationToken: cancellationToken);
             }
@@ -176,9 +197,6 @@ namespace DEPIBot.Dialogs
                 await stepContext.Context.SendActivityAsync("No comprendo, lo que que quieres decir", cancellationToken: cancellationToken);
             }
         }
-        private async Task<DialogTurnResult> FinalProcess(WaterfallStepContext stepContext, CancellationToken cancellationToken)
-        {
-            return await stepContext.EndDialogAsync(cancellationToken: cancellationToken);
-        }
+
     }
 }

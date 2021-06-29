@@ -27,7 +27,7 @@ namespace DEPIBot.Common.Cards
                     //ver los tipos de valores en el url de ..docs.microsoft.com/es-es/azure/bot-service/bot-builder-howto-add-media-attachments?view=azure-bot-service-4.0&tabs=csharp
                     new CardAction(ActionTypes.OpenUrl, title: "1. Sobre Nosotros", value: "https://www.morelia.tecnm.mx/"),
                     new CardAction(ActionTypes.PostBack, title: "2. Oferta Academica", value: "¿cual es la oferta academica?"),
-                    new CardAction(ActionTypes.PostBack, title: "3. Convenios", value: "¿Que convenios tienen?"),
+                    new CardAction(ActionTypes.PostBack, title: "3. Convenios", value: "convenios"),
                     new CardAction(ActionTypes.PostBack, title: "4. Contacto", value: "información de contacto" )
                 }
             };
