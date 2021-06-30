@@ -158,7 +158,13 @@ namespace DEPIBot.Dialogs
             await ofertaacademica.ToShow(stepContext, cancellationToken);
         }
 
-        
+        private async Task IntentBecas(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await stepContext.Context.SendActivityAsync("Becas para posgrados:", cancellationToken: cancellationToken);
+            await Becas.ToShow(stepContext, cancellationToken);
+        }
+
+
 
         private async Task IntentSaludar(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
         {
@@ -180,10 +186,7 @@ namespace DEPIBot.Dialogs
             await stepContext.Context.SendActivityAsync("Estoy para servirte, me gusta ayudar.", cancellationToken: cancellationToken);
         }
 
-        private async Task IntentBecas(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
-        {
-            await stepContext.Context.SendActivityAsync("Si, es la beca de posgrado de Conacyt.", cancellationToken: cancellationToken);
-        }
+        
 
         private async Task IntentDatosInscripcion(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
         {
