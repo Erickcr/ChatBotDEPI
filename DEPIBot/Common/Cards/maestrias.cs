@@ -19,42 +19,19 @@ namespace DEPIBot.Common.Cards
         private static Activity CreateCarousel()
         {
 
-            var cardElectronica = new HeroCard
+            var card1 = new HeroCard
             {
-                Title = "Maestría en Ciencias en Ingeniería Electrónica",
                 //Images =  new List<CardImage> { new CardImage("")}
                 Buttons = new List<CardAction>()
                 {
-                    new CardAction(){Title = "Ver", Value = "https://www.morelia.tecnm.mx/", Type = ActionTypes.OpenUrl}
-                }
-            };
-
-            var cardSistemas = new HeroCard
-            {
-                Title = "Maestría en Sistemas Computacionales con Orientación Profesional",
-                //Images =  new List<CardImage> { new CardImage("")}
-                Buttons = new List<CardAction>()
-                {
-                    new CardAction(){Title = "Ver", Value = "https://www.morelia.tecnm.mx/", Type = ActionTypes.OpenUrl}
-                }
-            };
-
-            var cardElectricaM = new HeroCard
-            {
-                Title = "Maestría en Ciencias en Ingeniería Eléctrica",
-
-                //Images =  new List<CardImage> { new CardImage("")}
-                Buttons = new List<CardAction>()
-                {
-                    new CardAction(){Title = "Ver", Value = "https://www.morelia.tecnm.mx/", Type = ActionTypes.OpenUrl}
+                    new CardAction(ActionTypes.PostBack, title: "Maestrías Profesionalizantes", value: "profesionalizantes"),
+                    new CardAction(ActionTypes.PostBack, title: "Maestrías en Ciencias", value: "ciencias")
                 }
             };
 
             var mae = new List<Attachment>()
             {
-                cardElectronica.ToAttachment(),
-                cardSistemas.ToAttachment(),
-                cardElectricaM.ToAttachment()
+                card1.ToAttachment()
             };
 
             var reply = MessageFactory.Attachment(mae);

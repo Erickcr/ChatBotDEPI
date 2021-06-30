@@ -80,11 +80,17 @@ namespace DEPIBot.Dialogs
                 case "DatosInscripcion":
                     await IntentDatosInscripcion(stepContext, luisResult, cancellationToken);
                     break;
-                    case "ofertaAcademica":
-                    await IntentofertaAcademica(stepContext, luisResult, cancellationToken);
-                    break;
+                case "ofertaAcademica":
+                await IntentofertaAcademica(stepContext, luisResult, cancellationToken);
+                break;
                 case "Maestrias":
                     await IntentMaestrias(stepContext, luisResult, cancellationToken);
+                    break;
+                case "Profesionalizantes":
+                    await IntentProfesionalizantes(stepContext, luisResult, cancellationToken);
+                    break;
+                case "Ciencias":
+                    await IntentCiencias(stepContext, luisResult, cancellationToken);
                     break;
                 case "Doctorados":
                     await IntentDoctorados(stepContext, luisResult, cancellationToken);
@@ -117,6 +123,18 @@ namespace DEPIBot.Dialogs
             await informacion.ToShow(stepContext, cancellationToken);
         }
 
+        private async Task IntentProfesionalizantes(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await stepContext.Context.SendActivityAsync("Te ofrecemos las siguientes Maestrías Profesionalizantes:", cancellationToken: cancellationToken);
+            await Profesionalizantes.ToShow(stepContext, cancellationToken);
+        }
+
+        private async Task IntentCiencias(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await stepContext.Context.SendActivityAsync("Te ofrecemos las siguientes Maestrías Ciencias:", cancellationToken: cancellationToken);
+            await Ciencias.ToShow(stepContext, cancellationToken);
+        }
+
         private async Task IntentContacto(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
         {
             await stepContext.Context.SendActivityAsync("Aquí te muestro la información de contacto de los diferentes coordinadores que tengo disponible:", cancellationToken: cancellationToken);
@@ -136,7 +154,7 @@ namespace DEPIBot.Dialogs
 
         private async Task IntentofertaAcademica(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
         {
-            await stepContext.Context.SendActivityAsync("Claro está es la oferta academica con la que contamos, tenemos Doctorados y Maestrías:", cancellationToken: cancellationToken);
+            await stepContext.Context.SendActivityAsync("Estás son las ofertas académicas con la que contamos, tenemos Doctorados y Maestrías", cancellationToken: cancellationToken);
             await ofertaacademica.ToShow(stepContext, cancellationToken);
         }
 
@@ -170,12 +188,12 @@ namespace DEPIBot.Dialogs
         private async Task IntentDatosInscripcion(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
         {
             await stepContext.Context.SendActivityAsync("-Copia cotejada del título de licenciatura, cédula profesional, acta de examen profesional o documento oficial equivalente en Derecho o disciplinas afines al Programa a cursar." + "\r\n" +
-                $"-Copia de certificado de estudios con promedio mínimo de ocho." + "\r\n" +
-                $"Copia del acta de nacimiento." + "\r\n" +
-                $"Dos copias del CURP(actualizado)." + "\r\n" +
-                $"Curriculum Vitae con soporte documental en copia." + "\r\n" +
-                $"Carta de exposición de motivos." + "\r\n" +
-                $"Dos fotografías tamaño infantil de frente." + "\r\n" +
+                $"-Copia de certificado de estudios con promedio mínimo de ocho." + "\n" +
+                $"Copia del acta de nacimiento." + "\n" +
+                $"Dos copias del CURP(actualizado)." + "\n" +
+                $"Curriculum Vitae con soporte documental en copia." + "\n" +
+                $"Carta de exposición de motivos." + "\n" +
+                $"Dos fotografías tamaño infantil de frente." + "\n" +
                 $"Dos cartas de recomendación académica.", cancellationToken: cancellationToken);
         }
         #endregion

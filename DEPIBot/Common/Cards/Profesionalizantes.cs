@@ -6,40 +6,38 @@ using System.Threading.Tasks;
 using System.Threading;
 using Microsoft.Bot.Schema;
 using Microsoft.Bot.Builder;
-
 namespace DEPIBot.Common.Cards
 {
-    public class doctorados
+    public class Profesionalizantes
     {
         public static async Task ToShow(DialogContext stepContext, CancellationToken canelationToken)
         {
-            await stepContext.Context.SendActivityAsync(activity: CreateCarousel(), canelationToken);
+            await stepContext.Context.SendActivityAsync(activity: Create(), canelationToken);
         }
 
-        private static Activity CreateCarousel()
+        private static Activity Create()
         {
-
             var card1 = new HeroCard
             {
-                Title = "Doctorados",
+                Title = "Maestrías Profesionalizantes",
                 //Images =  new List<CardImage> { new CardImage("")}
                 Buttons = new List<CardAction>()
                 {
-                    new CardAction(ActionTypes.OpenUrl, title: "Doctorado en Ciencias en Ingeniería", value: "http://sagitario.itmorelia.edu.mx/dci/"),
-                    new CardAction(ActionTypes.OpenUrl, title: "Doctorado en Ciencias en Ingeniería Eléctrica", value: "https://www.pgiie.com.mx/plan-de-estudios_pgiie_doctorado.html")
+
+                    new CardAction(ActionTypes.OpenUrl, title: "Maestría en Administración", value: "https://morelia.tecnm.mx/mia/"),
+                    new CardAction(ActionTypes.OpenUrl, title: "Maestría en Sistemas Computacionales", value: "http://dsc.itmorelia.edu.mx/msc/")
                 }
             };
 
-            var doc = new List<Attachment>()
+
+            var ofa = new List<Attachment>()
             {
-         
                 card1.ToAttachment()
             };
 
-            var reply = MessageFactory.Attachment(doc);
+            var reply = MessageFactory.Attachment(ofa);
             reply.AttachmentLayout = AttachmentLayoutTypes.Carousel;
             return reply as Activity;
         }
     }
 }
-
