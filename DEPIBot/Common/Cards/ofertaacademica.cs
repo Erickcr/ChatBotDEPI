@@ -11,6 +11,7 @@ namespace DEPIBot.Common.Cards
 {
     public class ofertaacademica
     {
+       
         public static async Task ToShow(DialogContext stepContext, CancellationToken canelationToken)
         {
             await stepContext.Context.SendActivityAsync(activity: Create(), canelationToken);

@@ -7,6 +7,7 @@
 
   <PropertyGroup Condition=" '$(RunConfiguration)' == '$safeprojectname$' " />
   <ItemGroup>
+    <PackageReference Include="AdaptiveCards" Version="2.7.1" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.1" />
     <PackageReference Include="Microsoft.Bot.Builder.AI.Luis" Version="4.13.2" />
     <PackageReference Include="Microsoft.Bot.Builder.AI.QnA" Version="4.13.2" />
@@ -20,5 +21,11 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Common\Cards\MElectrica\" />
+      <Folder Include="Common\Cards\DElectrica\" />
+      <Folder Include="Common\Images\" />
+    </ItemGroup>
 
 </Project>

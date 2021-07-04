@@ -1,4 +1,6 @@
 ﻿using DEPIBot.Common.Cards;
+using DEPIBot.Common.Cards.MElectronica;
+using DEPIBot.Common.Cards.MSistemas;
 using EchoBot.Infrastructure;
 using EchoBot.Infrastructure.QnAMakerAI;
 using Microsoft.Bot.Builder;
@@ -110,13 +112,78 @@ namespace DEPIBot.Dialogs
                 case "None":
                     await IntentNone(stepContext, luisResult, cancellationToken);
                     break;
+                case "campoaccion_MElectronica":
+                    await IntentcaME(stepContext, luisResult, cancellationToken);
+                    break;
+                case "planestudio_MElectronica":
+                    await IntentpeME(stepContext, luisResult, cancellationToken);
+                    break;
+                case "requiEgreso_MElectronica":
+                    await IntentreME(stepContext, luisResult, cancellationToken);
+                    break;
+                case "requisitos_MElectronica":
+                    await IntentrME(stepContext, luisResult, cancellationToken);
+                    break;
+                case "docum_MElectronica":
+                    await IntentdME(stepContext, luisResult, cancellationToken);
+                    break;
+                case "campo_accionMSistemas":
+                    await IntentcaMS(stepContext, luisResult, cancellationToken);
+                    break;
+                case "planestudio_MSistemas":
+                    await IntentpeMS(stepContext, luisResult, cancellationToken);
+                    break;
                 default:
                     break;
             }
 
             return await stepContext.NextAsync(cancellationToken : cancellationToken);
         }
+
+
         #region IntentLuis
+
+        private async Task IntentpeMS(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await stepContext.Context.SendActivityAsync("Plan de estudios:", cancellationToken: cancellationToken);
+            await planestudio_ms.ToShow(stepContext, cancellationToken);
+        }
+
+        private async Task IntentcaMS(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await stepContext.Context.SendActivityAsync("Campo de acción:", cancellationToken: cancellationToken);
+            await campoaccion_ms.ToShow(stepContext, cancellationToken);
+        }
+
+        private async Task IntentdME(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await stepContext.Context.SendActivityAsync("Documentación:", cancellationToken: cancellationToken);
+            await doc_admin_me.ToShow(stepContext, cancellationToken);
+        }
+
+        private async Task IntentrME(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await stepContext.Context.SendActivityAsync("Los requisitos de ingreso para la Maestría en Electrónica son los siguientes:", cancellationToken: cancellationToken);
+            await intentrME.ToShow(stepContext, cancellationToken);
+        }
+
+        private async Task IntentreME(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await stepContext.Context.SendActivityAsync("Egreso:", cancellationToken: cancellationToken);
+            await requisitos_egreso.ToShow(stepContext, cancellationToken);
+        }
+
+        private async Task IntentpeME(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await stepContext.Context.SendActivityAsync("El Plan de Estudio de la Maestría en Electrónica es:", cancellationToken: cancellationToken);
+            await inntentpeME.ToShow(stepContext, cancellationToken);
+        }
+
+        private async Task IntentcaME(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await stepContext.Context.SendActivityAsync("Campo de acción", cancellationToken: cancellationToken);
+            await campo_accion.ToShow(stepContext, cancellationToken);
+        }
         private async Task Intentinformacion(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
         {
             await stepContext.Context.SendActivityAsync("¿Que tipo de información requieres saber? \n\n Te dejo algunas opciones o me puedes escribir tu pregunta, estoy para atenderte bebe", cancellationToken: cancellationToken);
@@ -200,6 +267,24 @@ namespace DEPIBot.Dialogs
                 $"Dos cartas de recomendación académica.", cancellationToken: cancellationToken);
         }
         #endregion
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         // metodo del IntentNone 
         private async Task IntentNon(WaterfallStepContext stepContext, CancellationToken cancellationToken)
