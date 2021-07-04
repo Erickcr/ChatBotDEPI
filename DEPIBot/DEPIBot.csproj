@@ -23,7 +23,6 @@
   </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Common\Cards\MElectrica\" />
       <Folder Include="Common\Cards\DElectrica\" />
       <Folder Include="Common\Images\" />
     </ItemGroup>

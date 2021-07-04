@@ -1,4 +1,5 @@
 ﻿using DEPIBot.Common.Cards;
+using DEPIBot.Common.Cards.MElectrica;
 using DEPIBot.Common.Cards.MElectronica;
 using DEPIBot.Common.Cards.MSistemas;
 using EchoBot.Infrastructure;
@@ -133,6 +134,15 @@ namespace DEPIBot.Dialogs
                 case "planestudio_MSistemas":
                     await IntentpeMS(stepContext, luisResult, cancellationToken);
                     break;
+                case "planestudio_MElectrica":
+                    await Intentpest_me(stepContext, luisResult, cancellationToken);
+                    break;
+                case "perfiling_MElectrica":
+                    await Intentpi_me(stepContext, luisResult, cancellationToken);
+                    break;
+                case "perfilegreso_MElectrica":
+                    await Intentpe_me(stepContext, luisResult, cancellationToken);
+                    break;
                 default:
                     break;
             }
@@ -143,6 +153,23 @@ namespace DEPIBot.Dialogs
 
         #region IntentLuis
 
+        private async Task Intentpe_me(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await stepContext.Context.SendActivityAsync("Perfil de egreso:", cancellationToken: cancellationToken);
+            await perfil_egreso.ToShow(stepContext, cancellationToken);
+        }
+
+        private async Task Intentpi_me(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await stepContext.Context.SendActivityAsync("Perfil de ingreso:", cancellationToken: cancellationToken);
+            await perfil_ingreso.ToShow(stepContext, cancellationToken);
+        }
+
+        private async Task Intentpest_me(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await stepContext.Context.SendActivityAsync("Plan de estudios:", cancellationToken: cancellationToken);
+            await plan_estudio.ToShow(stepContext, cancellationToken);
+        }
         private async Task IntentpeMS(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
         {
             await stepContext.Context.SendActivityAsync("Plan de estudios:", cancellationToken: cancellationToken);
