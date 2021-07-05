@@ -1,4 +1,5 @@
 ﻿using DEPIBot.Common.Cards;
+using DEPIBot.Common.Cards.DElectrica;
 using DEPIBot.Common.Cards.MElectrica;
 using DEPIBot.Common.Cards.MElectronica;
 using DEPIBot.Common.Cards.MSistemas;
@@ -143,11 +144,38 @@ namespace DEPIBot.Dialogs
                 case "perfilegreso_MElectrica":
                     await Intentpe_me(stepContext, luisResult, cancellationToken);
                     break;
+                case "perfilingreso_DElectrica":
+                    await Intentpi_de(stepContext, luisResult, cancellationToken);
+                    break;
+                case "perfilegreso_DElectrica":
+                    await Intentpe_de(stepContext, luisResult, cancellationToken);
+                    break;
+                case "planestudio_DElectrica":
+                    await Intentplan_de(stepContext, luisResult, cancellationToken);
+                    break;
                 default:
                     break;
             }
 
             return await stepContext.NextAsync(cancellationToken : cancellationToken);
+        }
+
+        private async Task Intentplan_de(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await stepContext.Context.SendActivityAsync("", cancellationToken: cancellationToken);
+            await planestudio_DE.ToShow(stepContext, cancellationToken);
+        }
+
+        private async Task Intentpe_de(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await stepContext.Context.SendActivityAsync("", cancellationToken: cancellationToken);
+            await perfilegreso_DE.ToShow(stepContext, cancellationToken);
+        }
+
+        private async Task Intentpi_de(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await stepContext.Context.SendActivityAsync("", cancellationToken: cancellationToken);
+            await perfilingreso_DE.ToShow(stepContext, cancellationToken);
         }
 
 

@@ -1,11 +1,7 @@
 {
   "ExpandedNodes": [
     "",
-    "\\DEPIBot",
-    "\\DEPIBot\\Common",
-    "\\DEPIBot\\Common\\Cards",
-    "\\DEPIBot\\Dialogs"
+    "\\DEPIBot"
   ],
-  "SelectedNode": "\\DEPI.sln",
   "PreviewInSolutionExplorer": false
 }
