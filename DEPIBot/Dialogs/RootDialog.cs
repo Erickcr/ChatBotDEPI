@@ -7,16 +7,13 @@ using EchoBot.Infrastructure;
 using EchoBot.Infrastructure.QnAMakerAI;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Dialogs;
-using Microsoft.Bot.Schema;
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace DEPIBot.Dialogs
 {
-    public class RootDialog: ComponentDialog
+    public class RootDialog : ComponentDialog
     {
         private readonly IQnAMakerAIService _qnaMakerAIService;
         private readonly ILuisService _luisService;
@@ -70,7 +67,7 @@ namespace DEPIBot.Dialogs
         private async Task<DialogTurnResult> ManageIntentions(WaterfallStepContext stepContext, Microsoft.Bot.Builder.RecognizerResult luisResult, CancellationToken cancellationToken)
         {
             var topIntent = luisResult.GetTopScoringIntent();
-            switch(topIntent.intent)
+            switch (topIntent.intent)
             {
                 case "Saludar":
                     await IntentSaludar(stepContext, luisResult, cancellationToken);
@@ -81,12 +78,9 @@ namespace DEPIBot.Dialogs
                 case "Agradecer":
                     await IntentAgradecer(stepContext, luisResult, cancellationToken);
                     break;
-                case "DatosInscripcion":
-                    await IntentDatosInscripcion(stepContext, luisResult, cancellationToken);
-                    break;
                 case "ofertaAcademica":
-                await IntentofertaAcademica(stepContext, luisResult, cancellationToken);
-                break;
+                    await IntentofertaAcademica(stepContext, luisResult, cancellationToken);
+                    break;
                 case "Maestrias":
                     await IntentMaestrias(stepContext, luisResult, cancellationToken);
                     break;
@@ -103,11 +97,11 @@ namespace DEPIBot.Dialogs
                     await IntentContacto(stepContext, luisResult, cancellationToken);
                     break;
                 case "informacion":
-                        await Intentinformacion(stepContext, luisResult, cancellationToken);
+                    await Intentinformacion(stepContext, luisResult, cancellationToken);
                     break;
                 case "Convenios":
                     await IntentConvenios(stepContext, luisResult, cancellationToken);
-                break;
+                    break;
                 case "DEPI":
                     await IntentDEPI(stepContext, luisResult, cancellationToken);
                     break;
@@ -183,35 +177,59 @@ namespace DEPIBot.Dialogs
                 case "organismos":
                     await Intentorg(stepContext, luisResult, cancellationToken);
                     break;
-                /*case "":
-                    await Intent(stepContext, luisResult, cancellationToken);
+                case "objetivos_particulares_DElectrica":
+                    await Intentobj_p_de(stepContext, luisResult, cancellationToken);
                     break;
-                case "":
-                    await Intent(stepContext, luisResult, cancellationToken);
+                case "objetivo_DElectrica":
+                    await Intentobj_de(stepContext, luisResult, cancellationToken);
                     break;
-                case "":
-                    await Intent(stepContext, luisResult, cancellationToken);
+                case "examen_Grado":
+                    await Intentexa_g(stepContext, luisResult, cancellationToken);
                     break;
-                case "":
-                    await Intent(stepContext, luisResult, cancellationToken);
+                case "objetivos_particulares_MElectrica":
+                    await Intentobj_p_me(stepContext, luisResult, cancellationToken);
                     break;
-                case "":
-                    await Intent(stepContext, luisResult, cancellationToken);
+                case "objetivo_MElectrica":
+                    await Intentobj_me(stepContext, luisResult, cancellationToken);
                     break;
-                case "":
-                    await Intent(stepContext, luisResult, cancellationToken);
+                case "perfil_E_MSistemas":
+                    await Intentpe_ms(stepContext, luisResult, cancellationToken);
                     break;
-                case "":
-                    await Intent(stepContext, luisResult, cancellationToken);
+                case "perfil_I_MSistemas":
+                    await Intentpi_ms(stepContext, luisResult, cancellationToken);
                     break;
-                case "":
-                    await Intent(stepContext, luisResult, cancellationToken);
-                    break;*/
+                case "objetivo_MSistemas":
+                    await Intentobj_ms(stepContext, luisResult, cancellationToken);
+                    break;
+                case "beca_MElectronica":
+                    await Intentbeca_mele(stepContext, luisResult, cancellationToken);
+                    break;
+                case "lG_AConocimiento_MS":
+                    await Intentlg_ac_ms(stepContext, luisResult, cancellationToken);
+                    break;
+                case "objetivos_particulares_MElectronica":
+                    await Intentobj_p_mele(stepContext, luisResult, cancellationToken);
+                    break;
+                case "objetivo_MElectronica":
+                    await Intentobj_mele(stepContext, luisResult, cancellationToken);
+                    break;
+                case "clave_MElectronica":
+                    await Intentclave_mele(stepContext, luisResult, cancellationToken);
+                    break;
+                case "perfilegreso_MElectronica":
+                    await Intentpi_mele(stepContext, luisResult, cancellationToken);
+                    break;
+                case "lG_AConocimiento_MELE":
+                    await Intentlg_ac_mele(stepContext, luisResult, cancellationToken);
+                    break;
+                case "inf_MElectronica":
+                    await Intentinf_mele(stepContext, luisResult, cancellationToken);
+                    break;
                 default:
                     break;
             }
 
-            return await stepContext.NextAsync(cancellationToken : cancellationToken);
+            return await stepContext.NextAsync(cancellationToken: cancellationToken);
         }
 
 
@@ -343,6 +361,7 @@ namespace DEPIBot.Dialogs
             await stepContext.Context.SendActivityAsync("Campo de acción", cancellationToken: cancellationToken);
             await campo_accion.ToShow(stepContext, cancellationToken);
         }
+
         private async Task Intentinformacion(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
         {
             await stepContext.Context.SendActivityAsync("¿Que tipo de información requieres saber? \n\n Te dejo algunas opciones o me puedes escribir tu pregunta, estoy para atenderte bebe", cancellationToken: cancellationToken);
@@ -390,6 +409,71 @@ namespace DEPIBot.Dialogs
             await Becas.ToShow(stepContext, cancellationToken);
         }
 
+        private async Task Intentpe_ms(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await stepContext.Context.SendActivityAsync("El perfil de egreso de la Maestría en Sistemas Computacionales:", cancellationToken: cancellationToken);
+            await perfil_egreso_ms.ToShow(stepContext, cancellationToken);
+        }
+
+        private async Task Intentpi_ms(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await stepContext.Context.SendActivityAsync("El perfil de ingreso a la Maestría en Ingeniería en Sistemas Computacionales es:", cancellationToken: cancellationToken);
+            await perfil_ingreso_ms.ToShow(stepContext, cancellationToken);
+        }
+
+        private async Task Intentobj_ms(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await stepContext.Context.SendActivityAsync("Nuestros objetivos y metas son:", cancellationToken: cancellationToken);
+            await objetivo_ms.ToShow(stepContext, cancellationToken);
+        }
+
+        private async Task Intentbeca_mele(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await stepContext.Context.SendActivityAsync("Este programa de maestría cuenta con el reconocimiento de:", cancellationToken: cancellationToken);
+            await beca_mele.ToShow(stepContext, cancellationToken);
+        }
+
+        private async Task Intentlg_ac_ms(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await stepContext.Context.SendActivityAsync("Tiene dos líneas de generación y aplicación del Conocimiento", cancellationToken: cancellationToken);
+            await lg_ac_ms.ToShow(stepContext, cancellationToken);
+        }
+
+        private async Task Intentobj_p_mele(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await obj_p_mele.ToShow(stepContext, cancellationToken);
+        }
+
+        private async Task Intentobj_mele(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await obj_mele.ToShow(stepContext, cancellationToken);
+        }
+
+        private async Task Intentclave_mele(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await clave_mele.ToShow(stepContext, cancellationToken);
+        }
+
+        private async Task Intentpi_mele(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await pi_mele.ToShow(stepContext, cancellationToken);
+        }
+
+        private async Task Intentlg_ac_mele(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await lg_ac_mele.ToShow(stepContext, cancellationToken);
+        }
+
+        private async Task Intentinf_mele(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await inf_mele.ToShow(stepContext, cancellationToken);
+        }
+
+
+
+
+
+
 
 
         private async Task IntentSaludar(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
@@ -412,19 +496,47 @@ namespace DEPIBot.Dialogs
             await stepContext.Context.SendActivityAsync("Estoy para servirte, me gusta ayudar.", cancellationToken: cancellationToken);
         }
 
-        
-
-        private async Task IntentDatosInscripcion(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        private async Task Intentobj_p_de(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
         {
-            await stepContext.Context.SendActivityAsync("-Copia cotejada del título de licenciatura, cédula profesional, acta de examen profesional o documento oficial equivalente en Derecho o disciplinas afines al Programa a cursar." + "\r\n" +
-                $"-Copia de certificado de estudios con promedio mínimo de ocho." + "\n" +
-                $"Copia del acta de nacimiento." + "\n" +
-                $"Dos copias del CURP(actualizado)." + "\n" +
-                $"Curriculum Vitae con soporte documental en copia." + "\n" +
-                $"Carta de exposición de motivos." + "\n" +
-                $"Dos fotografías tamaño infantil de frente." + "\n" +
-                $"Dos cartas de recomendación académica.", cancellationToken: cancellationToken);
+            await stepContext.Context.SendActivityAsync("Nuestros objetivos particulares siguientes:" + "\r\n" +
+                "• Formar profesionales capaces de dirigir e incorporarse a participar en trabajos de investigación científica y desarrollo tecnológico, aplicando sus conocimientos y las metodologías" +
+                " necesarias de forma original e innovadora, contribuyendo a la generación de nuevos conocimientos y tecnologías." + "\r\n" +
+                "• Preparar a sus egresados en la detección y análisis de problemas tecnológicos, innovando, mejorando y adaptando tecnologías en el desarrollo de proyectos de investigación." + "\r\n" +
+                "• Preparar a los egresados para que adquieran un perfil de un profesionista íntegro y con alto sentido de compromiso con su profesión y la sociedad." + "\r\n" +
+                "• Preparar a sus egresados para realizar actividades de docencia e investigación de calidad a nivel licenciatura y posgrado.", cancellationToken: cancellationToken);
         }
+
+        private async Task Intentobj_de(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await stepContext.Context.SendActivityAsync("Nuestro objetivo del Doctorado en Ciencias en Ingeniería Eléctrica es formar recursos humanos de alto nivel" +
+                " académico con conocimientos de frontera en el área de ingeniería eléctrica, capaces de realizar actividades de investigación científica" +
+                " y/o desarrollo tecnológico de manera original.", cancellationToken: cancellationToken);
+        }
+
+        private async Task Intentexa_g(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await stepContext.Context.SendActivityAsync("Es el examen en dónde presentarás los resultados de tu investigación con evidencia fundamentada ante el comité de revisión.", cancellationToken: cancellationToken);
+        }
+
+        private async Task Intentobj_p_me(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await stepContext.Context.SendActivityAsync("El plan de estudios de la Maestría en Ciencias tienen los siguientes objetivos particulares:" + "\r\n" +
+                "• Formar profesionales capaces de incorporarse y participar en trabajos de investigación científica y desarrollo tecnológico aplicando sus conocimientos" +
+                " y las metodologías necesarias, de forma original e innovadora." + "\r\n" +
+                "• Preparar a sus egresados en la detección, análisis y solución de problemas, innovando, mejorando y adaptando tecnologías de frontera en procesos productivos." + "\r\n" +
+                "• Preparar a los egresados para que adquieran un perfil de un profesionista íntegro, con alto sentido de compromiso con su profesión y la sociedad." + "\r\n" +
+                "• Preparar recursos humanos para realizar actividades de docencia a nivel licenciatura y posgrado." +
+                "• Preparar a sus egresados para la continuación de estudios de doctorado", cancellationToken: cancellationToken);
+        }
+
+        private async Task Intentobj_me(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await stepContext.Context.SendActivityAsync("Nuestro objetivo en la Maestría en Eléctrica es formar recursos humanos de alto nivel académico con una formación profesional sólida, científica y tecnológica" +
+                " con conocimientos de frontera en el área de ingeniería eléctrica, orientados a las actividades de investigación," +
+                " desarrollo tecnológico y docencia tanto en el sector público como en el sector privado", cancellationToken: cancellationToken);
+        }
+
+
         #endregion
 
 
@@ -445,6 +557,6 @@ namespace DEPIBot.Dialogs
                 await stepContext.Context.SendActivityAsync("No comprendo, lo que que quieres decir", cancellationToken: cancellationToken);
             }
         }
-
     }
 }
+    
