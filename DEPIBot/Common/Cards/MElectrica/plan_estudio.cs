@@ -33,7 +33,7 @@ namespace DEPIBot.Common.Cards.MElectrica
                 $"*La selección de las asignaturas básicas y optativas se realiza en función del tema de tesis." + "\r\n" +
                 $"*En la asignación de seminario se hace una revisión intermedia y semestral de los avances del proyecto de tesis" + "\r\n" +
                 $"*La calificación de estas asignaturas es asignada por un comité tutorial" + "\r\n",
-                Images = new List<CardImage> { new CardImage { Alt = "SpeechPic", Url = @"C:\Users\Lupita Carranza Diaz\source\repos\ChatBotDEPI\DEPIBot\Common\Images\maestria_electrica.jpeg" } },
+                Images = new List<CardImage> { new CardImage { Alt = "SpeechPic", Url = @"https://proyectodepi-6d38b.web.app/images/maestria_electrica.jpeg" } },
                 
             };
 

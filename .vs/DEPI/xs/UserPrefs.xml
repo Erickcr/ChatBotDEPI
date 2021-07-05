@@ -1,13 +1,8 @@
 ﻿<Properties StartupConfiguration="{03A681AD-98F3-49EA-8309-A3042DC1DC18}|$safeprojectname$">
-  <MonoDevelop.Ide.Workbench ActiveDocument="DEPIBot/Startup.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="DEPIBot/Common/Cards/MElectrica/plan_estudio.cs">
     <Files>
-      <File FileName="DEPIBot/Dialogs/RootDialog.cs" Line="101" Column="36" />
-      <File FileName="DEPIBot/Common/Cards/Becas.cs" />
-      <File FileName="DEPIBot/Startup.cs" Line="1" Column="1" />
-      <File FileName="DEPIBot/appsettings.json" />
-      <File FileName="DEPIBot/Common/Cards/informacion.cs" />
-      <File FileName="DEPIBot/Common/Cards/ofertaacademica.cs" Line="46" Column="12" NotebookId="1" />
-      <File FileName="DEPIBot/Common/Cards/contacto.cs" NotebookId="1" />
+      <File FileName="DEPIBot/Dialogs/RootDialog.cs" Line="120" Column="33" />
+      <File FileName="DEPIBot/Common/Cards/MElectrica/plan_estudio.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -15,14 +10,13 @@
           <Node name="DEPI" expanded="True">
             <Node name="DEPIBot" expanded="True">
               <Node name="Common" expanded="True">
-                <Node name="Cards" expanded="True" />
+                <Node name="Cards" expanded="True">
+                  <Node name="MElectrica" expanded="True">
+                    <Node name="plan_estudio.cs" selected="True" />
+                  </Node>
+                </Node>
               </Node>
-              <Node name="Controllers" expanded="True" />
-              <Node name="DeploymentTemplates" expanded="True" />
               <Node name="Dialogs" expanded="True" />
-              <Node name="Infrastructure" expanded="True" />
-              <Node name="Properties" expanded="True" />
-              <Node name="Startup.cs" selected="True" />
             </Node>
           </Node>
         </State>

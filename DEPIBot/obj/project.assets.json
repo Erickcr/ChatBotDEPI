@@ -7752,26 +7752,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Lupita Carranza Diaz\\.nuget\\packages\\": {}
+    "/Users/erickcastruitarosas/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Lupita Carranza Diaz\\source\\repos\\ChatBotDEPI\\DEPIBot\\DEPIBot.csproj",
+      "projectUniqueName": "/Users/erickcastruitarosas/Documents/GitHub/ChatBotDEPI/DEPIBot/DEPIBot.csproj",
       "projectName": "DEPIBot",
-      "projectPath": "C:\\Users\\Lupita Carranza Diaz\\source\\repos\\ChatBotDEPI\\DEPIBot\\DEPIBot.csproj",
-      "packagesPath": "C:\\Users\\Lupita Carranza Diaz\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Lupita Carranza Diaz\\source\\repos\\ChatBotDEPI\\DEPIBot\\obj\\",
+      "projectPath": "/Users/erickcastruitarosas/Documents/GitHub/ChatBotDEPI/DEPIBot/DEPIBot.csproj",
+      "packagesPath": "/Users/erickcastruitarosas/.nuget/packages/",
+      "outputPath": "/Users/erickcastruitarosas/Documents/GitHub/ChatBotDEPI/DEPIBot/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Lupita Carranza Diaz\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/erickcastruitarosas/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -7837,7 +7835,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.301/RuntimeIdentifierGraph.json"
       }
     }
   }
