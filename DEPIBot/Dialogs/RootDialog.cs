@@ -153,11 +153,118 @@ namespace DEPIBot.Dialogs
                 case "planestudio_DElectrica":
                     await Intentplan_de(stepContext, luisResult, cancellationToken);
                     break;
+                case "mi_nombre":
+                    await Intentnombre(stepContext, luisResult, cancellationToken);
+                    break;
+                case "costo_examenadmin":
+                    await Intentcosto_examen(stepContext, luisResult, cancellationToken);
+                    break;
+                case "hacer_examenadmin":
+                    await Intenthacer_examen(stepContext, luisResult, cancellationToken);
+                    break;
+                case "fechas_titulacion":
+                    await Intentfehca_titulacion(stepContext, luisResult, cancellationToken);
+                    break;
+                case "titulo_cedula":
+                    await Intenttyc(stepContext, luisResult, cancellationToken);
+                    break;
+                case "puntos_ingles":
+                    await Intentpuntos_ingles(stepContext, luisResult, cancellationToken);
+                    break;
+                case "sobre_imss":
+                    await Intentimss(stepContext, luisResult, cancellationToken);
+                    break;
+                case "tener_titulo":
+                    await Intenttener_titulo(stepContext, luisResult, cancellationToken);
+                    break;
+                case "pnpc":
+                    await Intentpnpc(stepContext, luisResult, cancellationToken);
+                    break;
+                case "organismos":
+                    await Intentorg(stepContext, luisResult, cancellationToken);
+                    break;
+                /*case "":
+                    await Intent(stepContext, luisResult, cancellationToken);
+                    break;
+                case "":
+                    await Intent(stepContext, luisResult, cancellationToken);
+                    break;
+                case "":
+                    await Intent(stepContext, luisResult, cancellationToken);
+                    break;
+                case "":
+                    await Intent(stepContext, luisResult, cancellationToken);
+                    break;
+                case "":
+                    await Intent(stepContext, luisResult, cancellationToken);
+                    break;
+                case "":
+                    await Intent(stepContext, luisResult, cancellationToken);
+                    break;
+                case "":
+                    await Intent(stepContext, luisResult, cancellationToken);
+                    break;
+                case "":
+                    await Intent(stepContext, luisResult, cancellationToken);
+                    break;*/
                 default:
                     break;
             }
 
             return await stepContext.NextAsync(cancellationToken : cancellationToken);
+        }
+
+
+        #region IntentLuis
+
+
+        private async Task Intentorg(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await stepContext.Context.SendActivityAsync("Se incorporan la PRODEP, CONACyT y SICDET.", cancellationToken: cancellationToken);
+        }
+
+        private async Task Intentpnpc(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await stepContext.Context.SendActivityAsync("El Programa Nacional de Posgrados de Calidad, que forma parte de la política pública de fomento a la calidad del posgrado etc.", cancellationToken: cancellationToken);
+        }
+
+        private async Task Intenttener_titulo(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await stepContext.Context.SendActivityAsync("Si, es un requisito obligatorio", cancellationToken: cancellationToken);
+        }
+
+        private async Task Intentimss(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await stepContext.Context.SendActivityAsync("Es la hoja rosa que te dan en tu lugar de trabajo o la puedes obtener de la siguiente liga: https://www.gob.mx/afiliatealimss ", cancellationToken: cancellationToken);
+        }
+
+        private async Task Intentpuntos_ingles(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await stepContext.Context.SendActivityAsync("Debes tener 420 puntos de TOEFL o su equivalente en escala europea (B1)", cancellationToken: cancellationToken);
+        }
+
+        private async Task Intenttyc(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await stepContext.Context.SendActivityAsync("Solicita una constancia de título en trámite en el área de servicios escolares de tu institución.", cancellationToken: cancellationToken);
+        }
+
+        private async Task Intentfehca_titulacion(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await stepContext.Context.SendActivityAsync("Para determinar una fecha de titulación se ponen en acuerdo el alumno, profesor y los sinodales.", cancellationToken: cancellationToken);
+        }
+
+        private async Task Intenthacer_examen(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await stepContext.Context.SendActivityAsync("Es obligatorio hacer el examen de admisión, pero para mayor información puedes ponerte en contacto con el coordinador correspondiente, recuerda que cuento con los contactos de cada uno de ellos.", cancellationToken: cancellationToken);
+        }
+
+        private async Task Intentcosto_examen(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await stepContext.Context.SendActivityAsync("Para el semestre Agosto-Diciembre 2021 tendrá un costo de $10,000.00", cancellationToken: cancellationToken);
+        }
+        private async Task Intentnombre(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await stepContext.Context.SendActivityAsync("Que tal, mi nomre es Lulú", cancellationToken: cancellationToken);
         }
 
         private async Task Intentplan_de(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
@@ -177,9 +284,6 @@ namespace DEPIBot.Dialogs
             await stepContext.Context.SendActivityAsync("", cancellationToken: cancellationToken);
             await perfilingreso_DE.ToShow(stepContext, cancellationToken);
         }
-
-
-        #region IntentLuis
 
         private async Task Intentpe_me(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
         {
@@ -322,23 +426,6 @@ namespace DEPIBot.Dialogs
                 $"Dos cartas de recomendación académica.", cancellationToken: cancellationToken);
         }
         #endregion
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         // metodo del IntentNone 
