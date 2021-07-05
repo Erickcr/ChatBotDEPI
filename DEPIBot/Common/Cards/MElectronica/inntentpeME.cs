@@ -33,7 +33,7 @@ namespace DEPIBot.Common.Cards
                     $"NOTA:" + "\r\n" +
                     $" *Las asignaturas básicas serán asignadas de acuerdo al perfil de ingreso del estudiante." + "\r\n" +
                     $" *Las asignaturas optativas serán determinadas de acuerdo al proyecto de investigación y la LGAC elegida." + "\r\n",
-                    Images = new List<CardImage> { new CardImage {Alt = "SpeechPic", Url = @"C:\Users\Lupita Carranza Diaz\source\repos\ChatBotDEPI\DEPIBot\Common\Images\maestria_electronica.jpeg" } }
+                    Images = new List<CardImage> { new CardImage {Alt = "SpeechPic", Url = @"https://proyectodepi-6d38b.web.app/images/maestria_electronica.jpeg" } }
                     
                 };
 
