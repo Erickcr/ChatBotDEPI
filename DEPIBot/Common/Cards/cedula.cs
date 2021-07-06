@@ -24,7 +24,7 @@ namespace DEPIBot.Common.Cards
             var card1 = new HeroCard
             {
                 Subtitle = "Tramite de Grado y Cédula Profesional:",
-                Images = new List<CardImage> { new CardImage { Alt = "SpeechPic", Url = @"C:\Users\Lupita Carranza Diaz\source\repos\ChatBotDEPI\DEPIBot\Common\Images\tramite_cedula.jpeg" } },
+                Images = new List<CardImage> { new CardImage { Alt = "SpeechPic", Url = @"https://depiitm.000webhostapp.com/images/tramite_cedula.jpeg" } },
 
             };
 

@@ -30,11 +30,11 @@ namespace DEPIBot.Common.Cards.MSistemas
                 $"3.- Tres seminarios de Investigación." + "\r\n" +
                 $"4.- Tesis/Estancia." + "\r\n" +
                 $"Materias optativas por líneas de generación:" + "\r\n",
-                Images = new List<CardImage> { new CardImage { Alt = "SpeechPic", Url = @"https://proyectodepi-6d38b.web.app/images/maestria_sistemas.jpeg" } },
+                Images = new List<CardImage> { new CardImage { Alt = "SpeechPic", Url = @"https://depiitm.000webhostapp.com/images/maestria_sistemas.jpeg" } },
                 Buttons = new List<CardAction>()
                 {
-                     new CardAction(ActionTypes.DownloadFile ,"Seguridad Informática", value:  @"https://proyectodepi-6d38b.web.app/images/ing_soft.jpg"),
-                    new CardAction(ActionTypes.DownloadFile ,"Ing de Software y Sistemas Distribuidos ", value:  @"https://proyectodepi-6d38b.web.app/images/seg_info.jpg")
+                     new CardAction(ActionTypes.DownloadFile ,"Seguridad Informática", value:  @"https://depiitm.000webhostapp.com/images/ing_soft.jpg"),
+                    new CardAction(ActionTypes.DownloadFile ,"Ing de Software y Sistemas Distribuidos ", value:  @"https://depiitm.000webhostapp.com/images/seg_info.jpg")
                 }
             };
 

@@ -24,17 +24,17 @@ namespace DEPIBot.Common.Cards
             var card1 = new HeroCard
             {
                 Subtitle = "Obtención de Grado:",
-                Images = new List<CardImage> { new CardImage { Alt = "SpeechPic", Url = @"C:\Users\Lupita Carranza Diaz\source\repos\ChatBotDEPI\DEPIBot\Common\Images\grado_1.jpeg" } },
+                Images = new List<CardImage> { new CardImage { Alt = "SpeechPic", Url = @"https://depiitm.000webhostapp.com/images/grado_1.jpeg" } },
 
             };
             var card2 = new HeroCard
             {
-                Images = new List<CardImage> { new CardImage { Alt = "SpeechPic", Url = @"C:\Users\Lupita Carranza Diaz\source\repos\ChatBotDEPI\DEPIBot\Common\Images\grado_2.jpeg" } },
+                Images = new List<CardImage> { new CardImage { Alt = "SpeechPic", Url = @"https://depiitm.000webhostapp.com/images/grado_2.jpeg" } },
 
             };
             var card3 = new HeroCard
             {
-                Images = new List<CardImage> { new CardImage { Alt = "SpeechPic", Url = @"C:\Users\Lupita Carranza Diaz\source\repos\ChatBotDEPI\DEPIBot\Common\Images\grado_3.jpeg" } },
+                Images = new List<CardImage> { new CardImage { Alt = "SpeechPic", Url = @"https://depiitm.000webhostapp.com/images/grado_3.jpeg" } },
 
             };
 

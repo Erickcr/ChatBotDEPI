@@ -25,8 +25,8 @@ namespace DEPIBot.Common.Cards
                 //Images =  new List<CardImage> { new CardImage("")}
                 Buttons = new List<CardAction>()
                 {
-                    new CardAction(ActionTypes.OpenUrl, title: "Doctorado en Ciencias en Ingeniería", value: "http://sagitario.itmorelia.edu.mx/dci/"),
-                    new CardAction(ActionTypes.OpenUrl, title: "Doctorado en Ciencias en Ingeniería Eléctrica", value: "https://www.pgiie.com.mx/plan-de-estudios_pgiie_doctorado.html")
+                    new CardAction(ActionTypes.OpenUrl, title: "Doctorado en Ciencias en Ingeniería", value: "https://depiitm.000webhostapp.com/POSGRADOS/INGENIERIA/index.php"),
+                    new CardAction(ActionTypes.OpenUrl, title: "Doctorado en Ciencias en Ingeniería Eléctrica", value: "https://www.pgiie.com.mx")
                 }
             };
 

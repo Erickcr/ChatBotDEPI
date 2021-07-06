@@ -1,11 +1,8 @@
 ﻿<Properties StartupConfiguration="{03A681AD-98F3-49EA-8309-A3042DC1DC18}|$safeprojectname$">
-  <MonoDevelop.Ide.Workbench ActiveDocument="DEPIBot/Common/Cards/MElectronica/lg_ac_mele.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="DEPIBot/Dialogs/RootDialog.cs">
     <Files>
-      <File FileName="DEPIBot/Dialogs/RootDialog.cs" Line="181" Column="32" />
-      <File FileName="DEPIBot/Common/Cards/MElectronica/lg_ac_mele.cs" Line="26" Column="25" />
-      <File FileName="DEPIBot/Common/Cards/MElectronica/obj_mele.cs" />
-      <File FileName="DEPIBot/Common/Cards/MElectronica/inf_mele.cs" />
-      <File FileName="DEPIBot/Common/Cards/MElectrica/plan_estudio.cs" Line="1" Column="1" />
+      <File FileName="DEPIBot/Dialogs/RootDialog.cs" Line="292" Column="10" />
+      <File FileName="DEPIBot/Common/Cards/contacto_tesis.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -14,14 +11,12 @@
             <Node name="DEPIBot" expanded="True">
               <Node name="Common" expanded="True">
                 <Node name="Cards" expanded="True">
-                  <Node name="MElectrica" expanded="True" />
-                  <Node name="MElectronica" expanded="True">
-                    <Node name="lg_ac_mele.cs" selected="True" />
-                  </Node>
                   <Node name="MSistemas" expanded="True" />
                 </Node>
               </Node>
-              <Node name="Dialogs" expanded="True" />
+              <Node name="Dialogs" expanded="True">
+                <Node name="RootDialog.cs" selected="True" />
+              </Node>
             </Node>
           </Node>
         </State>

@@ -24,8 +24,8 @@ namespace DEPIBot.Common.Cards
                 Buttons = new List<CardAction>()
                 {
 
-                    new CardAction(ActionTypes.OpenUrl, title: "Maestría en Administración", value: "https://morelia.tecnm.mx/mia/"),
-                    new CardAction(ActionTypes.OpenUrl, title: "Maestría en Sistemas Computacionales", value: "http://dsc.itmorelia.edu.mx/msc/")
+                    new CardAction(ActionTypes.OpenUrl, title: "Maestría en Administración", value: "https://depiitm.000webhostapp.com/POSGRADOS/ADMINISTRATIVA/mia.php"),
+                    new CardAction(ActionTypes.OpenUrl, title: "Maestría en Sistemas Computacionales", value: "https://depiitm.000webhostapp.com/POSGRADOS/SISTEMAS/index.php")
                 }
             };
 

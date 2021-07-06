@@ -26,8 +26,8 @@ namespace DEPIBot.Common.Cards
                 Buttons = new List<CardAction>()
                 {
 
-                    new CardAction(ActionTypes.OpenUrl, title: "Maestría en Administración", value: "https://morelia.tecnm.mx/mia/"),
-                    new CardAction(ActionTypes.OpenUrl, title: "Maestría en Sistemas Computacionales", value: "http://dsc.itmorelia.edu.mx/msc/")
+                    new CardAction(ActionTypes.OpenUrl, title: "Maestría en Administración", value: "https://depiitm.000webhostapp.com/POSGRADOS/ADMINISTRATIVA/mia.php"),
+                    new CardAction(ActionTypes.OpenUrl, title: "Maestría en Sistemas Computacionales", value: "https://depiitm.000webhostapp.com/POSGRADOS/SISTEMAS/index.php")
                 }
             };
 
@@ -38,9 +38,9 @@ namespace DEPIBot.Common.Cards
                 Buttons = new List<CardAction>()
                 {
 
-                    new CardAction(ActionTypes.OpenUrl, title: "Maestría en Ciencias en Eléctrica", value: "https://pgiie.com.mx/plan-de-estudios.html#"),
-                    new CardAction(ActionTypes.OpenUrl, title: "Maestría en Ciencias en Ingeniería en Electrónica", value: "http://sagitario.itmorelia.edu.mx/pelectron/"),
-                    new CardAction(ActionTypes.OpenUrl, title: "Maestría en Ciencias en Metalugia", value: "https://sites.google.com/view/posgradometalurgiaitmorelia/inicio")
+                    new CardAction(ActionTypes.OpenUrl, title: "Maestría en Ciencias en Eléctrica", value: "https://www.pgiie.com.mx"),
+                    new CardAction(ActionTypes.OpenUrl, title: "Maestría en Ciencias en Ingeniería en Electrónica", value: "https://depiitm.000webhostapp.com/POSGRADOS/ELECTRONICA/index.php"),
+                    new CardAction(ActionTypes.OpenUrl, title: "Maestría en Ciencias en Metalugia", value: "https://sites.google.com/view/posgradometalurgiaitmorelia")
                 }
             };
 
@@ -50,8 +50,8 @@ namespace DEPIBot.Common.Cards
                 //Images =  new List<CardImage> { new CardImage("")}
                 Buttons = new List<CardAction>()
                 {
-                    new CardAction(ActionTypes.OpenUrl, title: "Doctorado en Ciencias en Ingeniería", value: "http://sagitario.itmorelia.edu.mx/dci/"),
-                    new CardAction(ActionTypes.OpenUrl, title: "Doctorado en Ciencias en Ingeniería Eléctrica", value: "https://www.pgiie.com.mx/plan-de-estudios_pgiie_doctorado.html")
+                    new CardAction(ActionTypes.OpenUrl, title: "Doctorado en Ciencias en Ingeniería", value: "https://depiitm.000webhostapp.com/POSGRADOS/INGENIERIA/index.php"),
+                    new CardAction(ActionTypes.OpenUrl, title: "Doctorado en Ciencias en Ingeniería Eléctrica", value: "https://www.pgiie.com.mx")
                 }
             };
 

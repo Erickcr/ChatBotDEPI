@@ -34,7 +34,7 @@ namespace DEPIBot.Common.Cards.DElectrica
                 $"4.- En las materias de Proyecto de Investigación I, II, III, IV, y V el alumno presentará de forma escrita y oral los avances de su investigación, el cuál será evaluado por el comité, en base a la calidad y avancé de los resultados presentados y se le asignará una calificacion." + "\r\n"+
                 $"5.- Durante su estancia en el Programa Doctoral, el alumno podrá cursar aquellas asignaturas adicionales que considere son necesarias para el desarrollo de su investigación, en común acuerdo con su director de tesis." + "\r\n" +
                 $"6.- Una vez acreditados todos los créditos y elaborado su tesis doctoral, el alumno presentará su examen de grado." + "\r\n" ,
-                Images = new List<CardImage> { new CardImage { Alt = "SpeechPic", Url = @"C:\Users\Lupita Carranza Diaz\source\repos\ChatBotDEPI\DEPIBot\Common\Images\doctorado_electrica.jpeg" } },
+                Images = new List<CardImage> { new CardImage { Alt = "SpeechPic", Url = @"https://depiitm.000webhostapp.com/images/doctorado_electrica.jpeg" } },
 
             };
 

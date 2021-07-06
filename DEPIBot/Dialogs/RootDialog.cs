@@ -267,26 +267,22 @@ namespace DEPIBot.Dialogs
 
         private async Task Intentcuatro(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
         {
-            await stepContext.Context.SendActivityAsync("", cancellationToken: cancellationToken);
-            //await contacto_tesis.ToShow(stepContext, cancellationToken);
+            await tesis.ToShow(stepContext, cancellationToken);
         }
 
         private async Task Intenttres(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
         {
-            await stepContext.Context.SendActivityAsync("", cancellationToken: cancellationToken);
-            //await contacto_tesis.ToShow(stepContext, cancellationToken); 
+            await grado.ToShow(stepContext, cancellationToken); 
         }
 
         private async Task Intentdos(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
         {
-            await stepContext.Context.SendActivityAsync("", cancellationToken: cancellationToken);
-            //await contacto_tesis.ToShow(stepContext, cancellationToken);
+            await cedula.ToShow(stepContext, cancellationToken);
         }
 
         private async Task Intentuno(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
         {
-            await stepContext.Context.SendActivityAsync("", cancellationToken: cancellationToken);
-            //await contacto_tesis.ToShow(stepContext, cancellationToken);
+            await admin_proyectos.ToShow(stepContext, cancellationToken);
         }
 
 
@@ -294,7 +290,6 @@ namespace DEPIBot.Dialogs
 
         private async Task Intentcontacto_tesis(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
         {
-            await stepContext.Context.SendActivityAsync("", cancellationToken: cancellationToken);
             await contacto_tesis.ToShow(stepContext, cancellationToken);
         }
         private async Task Intentfehcas_ing(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
@@ -323,7 +318,6 @@ namespace DEPIBot.Dialogs
 
         private async Task Intentpinscripcion(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
         {
-            await stepContext.Context.SendActivityAsync("", cancellationToken: cancellationToken);
             await proceso_insc.ToShow(stepContext, cancellationToken);
         }
 
@@ -383,19 +377,16 @@ namespace DEPIBot.Dialogs
 
         private async Task Intentplan_de(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
         {
-            await stepContext.Context.SendActivityAsync("", cancellationToken: cancellationToken);
             await planestudio_DE.ToShow(stepContext, cancellationToken);
         }
 
         private async Task Intentpe_de(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
         {
-            await stepContext.Context.SendActivityAsync("", cancellationToken: cancellationToken);
             await perfilegreso_DE.ToShow(stepContext, cancellationToken);
         }
 
         private async Task Intentpi_de(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
         {
-            await stepContext.Context.SendActivityAsync("", cancellationToken: cancellationToken);
             await perfilingreso_DE.ToShow(stepContext, cancellationToken);
         }
 

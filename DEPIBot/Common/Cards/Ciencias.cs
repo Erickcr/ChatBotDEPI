@@ -25,9 +25,9 @@ namespace DEPIBot.Common.Cards
                 Buttons = new List<CardAction>()
                 {
 
-                    new CardAction(ActionTypes.OpenUrl, title: "Maestría en Ciencias en Eléctrica", value: "https://pgiie.com.mx/plan-de-estudios.html#"),
-                    new CardAction(ActionTypes.OpenUrl, title: "Maestría en Ciencias en Ingeniería en Electrónica", value: "http://sagitario.itmorelia.edu.mx/pelectron/"),
-                    new CardAction(ActionTypes.OpenUrl, title: "Maestría en Ciencias en Metalugia", value: "https://sites.google.com/view/posgradometalurgiaitmorelia/inicio")
+                    new CardAction(ActionTypes.OpenUrl, title: "Maestría en Ciencias en Eléctrica", value: "https://www.pgiie.com.mx"),
+                    new CardAction(ActionTypes.OpenUrl, title: "Maestría en Ciencias en Ingeniería en Electrónica", value: "https://depiitm.000webhostapp.com/POSGRADOS/ELECTRONICA/index.php"),
+                    new CardAction(ActionTypes.OpenUrl, title: "Maestría en Ciencias en Metalugia", value: "https://sites.google.com/view/posgradometalurgiaitmorelia")
                 }
             };
 

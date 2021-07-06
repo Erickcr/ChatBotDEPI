@@ -24,7 +24,7 @@ namespace DEPIBot.Common.Cards
             var card1 = new HeroCard
             {
                 Subtitle = "Administración y desarrollo de proyectos:",
-                Images = new List<CardImage> { new CardImage { Alt = "SpeechPic", Url = @"C:\Users\Lupita Carranza Diaz\source\repos\ChatBotDEPI\DEPIBot\Common\Images\seguimiento_adminyprocedim_proy.jpeg" } },
+                Images = new List<CardImage> { new CardImage { Alt = "SpeechPic", Url = @"https://depiitm.000webhostapp.com/images/seguimiento_adminyprocedim_proy.jpeg" } },
 
             };
 
