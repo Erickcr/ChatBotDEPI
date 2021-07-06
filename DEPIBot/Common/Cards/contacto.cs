@@ -20,41 +20,37 @@ namespace DEPIBot.Common.Cards
 
         private static Activity CreateCarousel()
         {
+            var cardcoordinador = new HeroCard
+            {
+
+                Title = "Coordinador de la DEPI",
+                Text = $"Maestría en Administración: {Environment.NewLine}" + "\r\n" + $"☏ 9922113322{Environment.NewLine}" + "\r\n" + $"✉ correo@correo.com{Environment.NewLine}",
+            };
 
             var card1 = new HeroCard
             {
 
                 Title = "Maestrías Profesionalizantes",
-                Text = $"Maestría en Administración: {Environment.NewLine}" + "\r\n" + $"☏ 9922113322{Environment.NewLine}" + "\n" +
-                       $"Maestría en Sistemas Computacionales: {Environment.NewLine}" + "\n" + $"☏ 9922113322{Environment.NewLine}"
-                //Text = $"El correo de contacto es {Environment.NewLine}" + $"cordinadoor@morelia.tecnm.mx",
-                //Text = $"Nos encontramos en {Environment.NewLine}Avenida Tecnologico no. Mrelia Michoacán"
-
-                //await stepContext.Context.SendActivityAsync(phoneDetail, cancellationToken: cancellationToken);
-                //await stepContext.Context.SendActivityAsync(emailDetail, cancellationToken: cancellationToken);
-                //await stepContext.Context.SendActivityAsync(addressDetail, cancellationToken: cancellationToken);
+                Text = $"Maestría en Administración: {Environment.NewLine}" + "\r\n" + $"☏ 9922113322{Environment.NewLine}" + "\r\n" + $"✉ correo@correo.com{Environment.NewLine}" + "\n" +
+                       $"Maestría en Sistemas Computacionales: {Environment.NewLine}" + "\n" + $"☏ 9922113322{Environment.NewLine}" + "\r\n" + $"✉ correo@correo.com{Environment.NewLine}",
+                
             };
 
             var card2 = new HeroCard
             {
                 Title = "Maestrías en ciencias",
-                Text = $"Maestría en Ciencias en Eléctrica: {Environment.NewLine}" + "\n" + $"☏ 9922113322{Environment.NewLine}" + "\n" +
-                       $"Maestría en Ciencias en Ingeniería en Electrónica: {Environment.NewLine}" + "\n" + $"☏ 9922113322{Environment.NewLine}" + "\n" +
-                       $"Maestría en Ciencias en Metalugia: {Environment.NewLine}" + "\n" + $"☏ 9922113322{Environment.NewLine}"
-                //string emailDetail = $"El correo de contacto es {Environment.NewLine}" + $"cordinadoor@morelia.tecnm.mx",
-                //string addressDetail = $"Nos encontramos en {Environment.NewLine}Avenida Tecnologico no. Mrelia Michoacán"
-
-                //await stepContext.Context.SendActivityAsync(phoneDetail, cancellationToken: cancellationToken);
-                //await stepContext.Context.SendActivityAsync(emailDetail, cancellationToken: cancellationToken);
-                //await stepContext.Context.SendActivityAsync(addressDetail, cancellationToken: cancellationToken);
+                Text = $"Maestría en Ciencias en Eléctrica: {Environment.NewLine}" + "\n" + $"☏ 9922113322{Environment.NewLine}"+ "\r\n" + $"✉ correo@correo.com{Environment.NewLine}" + "\n" +
+                       $"Maestría en Ciencias en Ingeniería en Electrónica: {Environment.NewLine}" + "\n" + $"☏ 9922113322{Environment.NewLine}" + "\r\n" + $"✉ correo@correo.com{Environment.NewLine}" + "\n" +
+                       $"Maestría en Ciencias en Metalugia: {Environment.NewLine}" + "\n" + $"☏ 9922113322{Environment.NewLine}" + "\r\n" + $"✉ correo@correo.com{Environment.NewLine}",
+                
             };
 
             var card3 = new HeroCard
             {
 
                 Title = "Doctorados",
-                Text = $"Doctorado en Ciencias en Ingeniería: {Environment.NewLine}" + "\n" + $"☏ 9922113322{Environment.NewLine}" + "\n" +
-                       $"Doctorado en Ciencias en Ingeniería Eléctrica: {Environment.NewLine}" + "\n" + $"☏ 9922113322{Environment.NewLine}"
+                Text = $"Doctorado en Ciencias en Ingeniería: {Environment.NewLine}" + "\n" + $"☏ 9922113322{Environment.NewLine}"+ "\r\n" + $"✉ correo@correo.com{Environment.NewLine}" + "\n" +
+                       $"Doctorado en Ciencias en Ingeniería Eléctrica: {Environment.NewLine}" + "\n" + $"☏ 9922113322{Environment.NewLine}"+ "\r\n" + $"✉ correo@correo.com{Environment.NewLine}",
                 //Text = $"El correo de contacto es {Environment.NewLine}" + $"cordinadoor@morelia.tecnm.mx",
                 //Text = $"Nos encontramos en {Environment.NewLine}Avenida Tecnologico no. Mrelia Michoacán"
 
@@ -64,7 +60,7 @@ namespace DEPIBot.Common.Cards
             };
             var doc = new List<Attachment>()
             {
-         
+                cardcoordinador.ToAttachment(),
                 card1.ToAttachment(),
                 card2.ToAttachment(),
                 card3.ToAttachment()

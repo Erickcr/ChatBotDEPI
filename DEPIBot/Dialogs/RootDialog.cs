@@ -225,6 +225,39 @@ namespace DEPIBot.Dialogs
                 case "inf_MElectronica":
                     await Intentinf_mele(stepContext, luisResult, cancellationToken);
                     break;
+                case "dif_cyp":
+                    await Intentcyp(stepContext, luisResult, cancellationToken);
+                    break;
+                case "proceso_inscripcion":
+                    await Intentpinscripcion(stepContext, luisResult, cancellationToken);
+                    break;
+                case "ocupo_ingles":
+                    await Intentoingles(stepContext, luisResult, cancellationToken);
+                    break;
+                case "p_profesionalizante":
+                    await Intentprofesio(stepContext, luisResult, cancellationToken);
+                    break;
+                case "p_ciencias":
+                    await Intentciencias(stepContext, luisResult, cancellationToken);
+                    break;
+                case "fechas_ingreso":
+                    await Intentfehcas_ing(stepContext, luisResult, cancellationToken);
+                    break;
+                case "contacto_tesis":
+                    await Intentcontacto_tesis(stepContext, luisResult, cancellationToken);
+                    break;
+                case "admin_desarr_proyectos":
+                    await Intentuno(stepContext, luisResult, cancellationToken);
+                    break;
+                case "cedula":
+                    await Intentdos(stepContext, luisResult, cancellationToken);
+                    break;
+                case "grado":
+                    await Intenttres(stepContext, luisResult, cancellationToken);
+                    break;
+                case "tesis":
+                    await Intentcuatro(stepContext, luisResult, cancellationToken);
+                    break; 
                 default:
                     break;
             }
@@ -232,10 +265,73 @@ namespace DEPIBot.Dialogs
             return await stepContext.NextAsync(cancellationToken: cancellationToken);
         }
 
+        private async Task Intentcuatro(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await stepContext.Context.SendActivityAsync("", cancellationToken: cancellationToken);
+            //await contacto_tesis.ToShow(stepContext, cancellationToken);
+        }
+
+        private async Task Intenttres(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await stepContext.Context.SendActivityAsync("", cancellationToken: cancellationToken);
+            //await contacto_tesis.ToShow(stepContext, cancellationToken); 
+        }
+
+        private async Task Intentdos(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await stepContext.Context.SendActivityAsync("", cancellationToken: cancellationToken);
+            //await contacto_tesis.ToShow(stepContext, cancellationToken);
+        }
+
+        private async Task Intentuno(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await stepContext.Context.SendActivityAsync("", cancellationToken: cancellationToken);
+            //await contacto_tesis.ToShow(stepContext, cancellationToken);
+        }
+
 
         #region IntentLuis
 
+        private async Task Intentcontacto_tesis(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await stepContext.Context.SendActivityAsync("", cancellationToken: cancellationToken);
+            await contacto_tesis.ToShow(stepContext, cancellationToken);
+        }
+        private async Task Intentfehcas_ing(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await stepContext.Context.SendActivityAsync("Las fechas para el próximo semestre ago-dic 2021 son: \n\n dd-mm-aaaa al dd-mm-aaaa.", cancellationToken: cancellationToken);
 
+        }
+
+        private async Task Intentciencias(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await stepContext.Context.SendActivityAsync("Son los posgrados que pertenecen al Programa Nacional de Posgrados de Calidad y tiene como objetivo el formar recursos humanos en Ciencias con un alto nivel académico, con habilidad suficiente para proponer proyectos de investigación original de manera independiente.", cancellationToken: cancellationToken);
+
+        }
+
+        private async Task Intentprofesio(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await stepContext.Context.SendActivityAsync("Son los posgrados que tiene como campo de estudio una disciplina profesional y se diferencia del doctorado en investigación etc.", cancellationToken: cancellationToken);
+
+        }
+
+        private async Task Intentoingles(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await stepContext.Context.SendActivityAsync("Si", cancellationToken: cancellationToken);
+
+        }
+
+        private async Task Intentpinscripcion(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await stepContext.Context.SendActivityAsync("", cancellationToken: cancellationToken);
+            await proceso_insc.ToShow(stepContext, cancellationToken);
+        }
+
+        private async Task Intentcyp(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
+        {
+            await stepContext.Context.SendActivityAsync("Su diferencia es que en Ciencias enfatizarán la investigación y la docencia, mientras los Profesionalizantes enfatizarán el desarrollo de modelos o pautas apropiadas a la consultoría y la prestación de servicios.", cancellationToken: cancellationToken);
+
+        }
         private async Task Intentorg(WaterfallStepContext stepContext, RecognizerResult luisResult, CancellationToken cancellationToken)
         {
             await stepContext.Context.SendActivityAsync("Se incorporan la PRODEP, CONACyT y SICDET.", cancellationToken: cancellationToken);
