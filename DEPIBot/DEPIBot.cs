@@ -7,9 +7,13 @@ using Microsoft.Bot.Schema;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Text;
 
 namespace DEPIBot
 {
+   
     public class DEPIBot<T> : ActivityHandler where T: Dialog
     {
         private readonly BotState _userState;
@@ -23,16 +27,25 @@ namespace DEPIBot
             _dialog = dialog;
         }
 
-        protected override async Task OnMembersAddedAsync(IList<ChannelAccount> membersAdded, ITurnContext<IConversationUpdateActivity> turnContext, CancellationToken cancellationToken)
+
+        protected override async Task OnConversationUpdateActivityAsync(ITurnContext<IConversationUpdateActivity> turnContext, CancellationToken cancellationToken)
         {
-            foreach (var member in membersAdded)
-            {
-                if (member.Id != turnContext.Activity.Recipient.Id)
-                {
-                    await turnContext.SendActivityAsync(MessageFactory.Text($"Hola, Bienvenido a la DEPI,Division de Estudios de Posgrado e Investigacion"), cancellationToken);
-                }
-            }
+            if (string.IsNullOrEmpty(turnContext.Activity.From.Name))
+                await turnContext.SendActivityAsync(MessageFactory.Text($"Hola, Bienvenido a la DEPI, Division de Estudios de Posgrado e Investigacion"), cancellationToken);
+
+            await base.OnConversationUpdateActivityAsync(turnContext, cancellationToken);
         }
+        //protected override async Task OnMembersAddedAsync(IList<ChannelAccount> membersAdded, ITurnContext<IConversationUpdateActivity> turnContext, CancellationToken cancellationToken)
+        //{
+        //    foreach (var member in membersAdded)
+        //    {
+        //        if (member.Id != turnContext.Activity.Recipient.Id)
+        //        {
+        //            await turnContext.SendActivityAsync(MessageFactory.Text($"Hola, Bienvenido a la DEPI, Division de Estudios de Posgrado e Investigacion"), cancellationToken);
+        //        }
+        //    }
+        //}
+
 
         public override async Task OnTurnAsync(ITurnContext turnContext, CancellationToken cancellationToken = default)
         {

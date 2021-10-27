@@ -10,4 +10,5 @@ namespace EchoBot.Infrastructure.QnAMakerAI
     {
         QnAMaker _qnaMakerResult { get; set; }
     }
+
 }

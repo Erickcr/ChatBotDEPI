@@ -47,8 +47,8 @@ namespace DEPIBot
             // Create the Bot Framework Adapter with error handling enabled.
             services.AddSingleton<IBotFrameworkHttpAdapter, AdapterWithErrorHandler>();
 
-            services.AddSingleton<ILuisService, LuisService>();
             services.AddSingleton<IQnAMakerAIService, QnAMakerAIService>();
+            services.AddSingleton<ILuisService, LuisService>();
             services.AddSingleton<RootDialog>();
             services.AddTransient<IBot, DEPIBot<RootDialog>>();
         }
