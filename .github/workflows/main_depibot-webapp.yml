@@ -53,5 +53,5 @@ jobs:
         with:
           app-name: 'depibot-webapp'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5947D7DFB0D14556BD1E945F217C8DDB }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_BD4582299DEA4CA18B657779D5B80C6D }}
           package: .
